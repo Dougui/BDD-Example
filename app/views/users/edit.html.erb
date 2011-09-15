@@ -1,0 +1,16 @@
+<%= link_to t(".change_password_link"), :controller => :user_reset_passwords, :action => :edit, :id => @user.perishable_token %>
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+    <%= f.error_message_on :username %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+    <%= f.error_message_on :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit t(".submit") %>
+  </div>
+<% end %>

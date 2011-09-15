@@ -1,0 +1,16 @@
+<%= form_for(@user, :url => url_for(:action=> :update, :controller => :user_reset_passwords, :id => @user.perishable_token)) do |f| %>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+    <%= f.error_message_on :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+    <%= f.error_message_on :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit t(".submit") %>
+  </div>
+<% end %>
+

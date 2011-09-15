@@ -1,0 +1,310 @@
+# French translations for Ruby on Rails
+# by Christian Lescuyer (christian@flyingcoders.com)
+# contributors:
+# - Sebastien Grosjean - ZenCocoon.com
+# - Bruno Michel - http://github.com/nono
+# - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
+
+fr:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    day_names:
+      - dimanche
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - vendredi
+      - samedi
+    abbr_day_names:
+      - dim
+      - lun
+      - mar
+      - mer
+      - jeu
+      - ven
+      - sam
+    month_names:
+      - ~
+      - janvier
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
+      - août
+      - septembre
+      - octobre
+      - novembre
+      - décembre
+    abbr_month_names:
+      - ~
+      - jan.
+      - fév.
+      - mar.
+      - avr.
+      - mai
+      - juin
+      - juil.
+      - août
+      - sept.
+      - oct.
+      - nov.
+      - déc.
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%d %B %Y %H:%M:%S"
+      short: "%d %b %H:%M"
+      long: "%A %d %B %Y %H:%M"
+    am: 'am'
+    pm: 'pm'
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "une demi-minute"
+      less_than_x_seconds:
+        zero: "moins d'une seconde"
+        one: "moins d'une seconde"
+        other: "moins de %{count} secondes"
+      x_seconds:
+        one: "1 seconde"
+        other: "%{count} secondes"
+      less_than_x_minutes:
+        zero: "moins d'une minute"
+        one: "moins d'une minute"
+        other: "moins de %{count} minutes"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      about_x_hours:
+        one: "environ une heure"
+        other: "environ %{count} heures"
+      x_days:
+        one: "1 jour"
+        other: "%{count} jours"
+      about_x_months:
+        one: "environ un mois"
+        other: "environ %{count} mois"
+      x_months:
+        one: "1 mois"
+        other: "%{count} mois"
+      about_x_years:
+        one: "environ un an"
+        other: "environ %{count} ans"
+      over_x_years:
+        one: "plus d'un an"
+        other: "plus de %{count} ans"
+      almost_x_years:
+        one: "presqu'un an"
+        other: "presque %{count} ans"
+    prompts:
+      year: "Année"
+      month: "Mois"
+      day: "Jour"
+      hour: "Heure"
+      minute: "Minute"
+      second: "Seconde"
+
+  number:
+    format:
+      separator: ","
+      delimiter: " "
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: "%n %u"
+        unit: "€"
+        separator: ","
+        delimiter: " "
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "octet"
+            other: "octets"
+          kb: "ko"
+          mb: "Mo"
+          gb: "Go"
+          tb: "To"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "millier"
+          million: "million"
+          billion: "milliard"
+          trillion: "billion"
+          quadrillion: "million de milliards"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " et "
+      last_word_connector: " et "
+    select:
+      prompt: "Veuillez sélectionner"
+
+  helpers:
+    select:
+      prompt: "Veuillez sélectionner"
+    submit:
+      create: "Créer un %{model}"
+      update: "Modifier ce %{model}"
+      submit: "Enregistrer ce %{model}"
+
+  attributes:
+    created_at: "Créé le"
+    updated_at: "Modifié le"
+
+  errors:
+    format: "Le %{attribute} %{message}"
+    messages: &errors_messages
+      inclusion: "n'est pas inclus(e) dans la liste"
+      exclusion: "n'est pas disponible"
+      invalid: "n'est pas valide"
+      confirmation: "ne concorde pas avec la confirmation"
+      accepted: "doit être accepté(e)"
+      empty: "doit être rempli(e)"
+      blank: "doit être rempli(e)"
+      too_long: "est trop long (pas plus de %{count} caractères)"
+      too_short: "est trop court (au moins %{count} caractères)"
+      wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      not_a_number: "n'est pas un nombre"
+      not_an_integer: "doit être un nombre entier"
+      greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+      equal_to: "doit être égal à %{count}"
+      less_than: "doit être inférieur à %{count}"
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+      odd: "doit être impair"
+      even: "doit être pair"
+    template: &errors_template
+      header:
+        one: "Impossible d'enregistrer ce %{model} : 1 erreur"
+        other: "Impossible d'enregistrer ce %{model} : %{count} erreurs"
+      body: "Veuillez vérifier les champs suivants : "
+      
+  activerecord:
+    errors:
+      messages:
+        taken: "n'est pas disponible"
+        record_invalid: "La validation a échoué : %{errors}"
+        <<: *errors_messages
+      template:
+        <<: *errors_template
+      full_messages:
+        format: "%{attribute} %{message}"
+
+    attributes:
+      models:
+        user: Utilisateur
+      user:
+        username: Pseudo
+        email: Adresse de courriel
+        password: Mot de passe
+        password_confirmation: Mot de passe (confirmation)
+
+  dashboards:
+    successfully_updated: "Votre mot de passe a été modifié"
+    index:
+      create: 'S''inscrire'
+      remember: 'Me rappeler mon not de passe'
+      login: 'Se connecter'
+      logout: 'Se déconnecter'
+      edit: 'Modifier mon compte'
+      destroy: 'Supprimer mon compte'
+      are_you_sure: 'Êtes vous sur?'
+
+  authlogic:
+    error_messages:
+      login_blank: "doit être rempli(e)"
+      login_not_found: "n'est pas valide"
+      login_invalid: "doit contenir uniquement des lettres, des nombres, des espaces, et .-_@ s'il vous plaît."
+      consecutive_failed_logins_limit_exceeded: La limit de tentatives de connexion consectuives a été dépassée. Le compte à été désactivé.
+      email_invalid: ne semble pas être une adresse de courriel
+      password_blank: "doit être rempli(e)"
+      password_invalid: "n'est pas valide"
+      not_active: "Votre compte n'est pas actif"
+      not_confirmed: "Votre compte n'est pas confirmé"
+      not_approved: "Votre compte n'est pas approuvé"
+      no_authentication_details: "Vous n'avez pas fournis les details pour vous authentifier."
+    models:
+      user: "Utilisateur"
+      user_session: "Session utilisateur"
+    attributes:
+      user_session:
+        username: Pseudo
+        login: Login
+        email: Courriel
+        password: "Mot de passe"
+        remember_me: "se souvenir de moi"
+        
+  application_controller:
+    access_denied: Vous devez vous connecter pour accéder à cette page.
+    perishabletoken_not_valid: "Désolé, nous n'avons pu trouver votre compte.<br/> Veuillez effectuer un copier/coller depuis le courriel vers votre navigateur.<br/> Vous pouvez égaelement recommencer la procédure de réinitialisation de mot de passe."
+
+
+  user_mailer:
+    activation:
+      title: Activation de votre compte
+      message: "Bonjour %{user}, <br/><br/>Pour activer votre compte vous devez vous rendre à l'adresse : %{link_for_activate}"
+
+    reset_password:
+      title: Activation de votre compte
+      message: "Bonjour %{user}, <br/><br/>Pour modifier votre mot de passe vous devez vous rendre à cette adresse : %{link_for_password_reset}"
+
+  users:
+    controller:
+      successfully_created: "Vous avez été enregistré. Un courriel de confirmation vous a été envoyé. Vous devez confirmer votre inscription pour continuer."
+      successfully_updated: "Votre compte a été modifié"
+      successfully_destroyed: "Votre compte a été supprimé"
+    new:
+      submit: "S'inscrire"
+    edit:
+      change_password_link: "Modifier le mot de passe"
+      submit: "Valider"
+
+  user_sessions:
+    new:
+      submit: "Se connecter"
+  user_reset_passwords:
+    controller:
+      successfully_updated: "Votre mot de passe a été modifié"
+      successfully_created: "Un courriel de confirmation vous a été envoyé. Vous devez suivre les étapes indquées pour continuer."
+      unknown_email : "Cette adresse de courriel n'est pas enregistrée."
+
+    new:
+      submit: "Valider"
+    edit:
+      submit: "Valider"
+
+  user_activates:
+    controller:
+      user_activated: "Votre compte a été activé. Vous pouvez vous connecter."
+    

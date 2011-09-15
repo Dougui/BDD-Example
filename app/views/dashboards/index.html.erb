@@ -1,0 +1,8 @@
+<% if @current_user %>
+  <%= link_to t('.destroy'), @current_user, :confirm => t('.are_you_sure'), :method => :delete %>
+  <%= link_to t('.logout'), user_session_path(@current_user), :method=>:delete %>
+  <%= link_to t('.edit'), edit_user_path(@current_user) %>
+<% else %>
+  <%= link_to t('.create'), new_user_path%>
+  <%= link_to t('.login'), :login %>
+<% end %>

@@ -1,0 +1,22 @@
+<%= form_for(@user_session) do |f| %>
+  <% if @user_session.errors[:base].any? %>
+    <div id="error_explanation">
+      <% @user_session.errors[:base].each do |message| %>
+        <%= message %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+    <%= f.error_message_on :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+    <%= f.error_message_on :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit t(".submit") %>
+  </div>
+<% end %>

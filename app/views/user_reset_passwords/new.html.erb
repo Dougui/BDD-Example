@@ -1,0 +1,11 @@
+<%= form_for(:user, :url => url_for(:action=>:create, :controller=> :user_reset_passwords)) do |f| %>
+  <div class="field">
+    <%= f.label :email, t("activerecord.attributes.user.email") %><br />
+    <%= f.text_field :email %>
+    <%= f.error_message_on :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit t(".submit") %>
+  </div>
+<% end %>
+

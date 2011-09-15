@@ -1,0 +1,49 @@
+module Autotest::Notify
+  def self.notify(title, msg, img, pri='low', time=500)
+    `notify-send -i #{img} -u #{pri} -t #{time} '#{title}' '#{msg}'`
+  end
+
+  Autotest.add_hook :ran_features do |autotest|
+    begin
+      results = autotest.results
+      if results.last
+          output = results[-3].gsub(/\e\[(\d+)m/,'')
+      else
+          output = 'no message'
+      end
+      images = "~/.autotest_images/"
+      if output =~ /[1-9]\d*\sfailed/
+        output = results[-5].gsub(/\e\[(\d+)m/,'')
+        notify "Failure", "#{output}", "#{images}/ruby_red.png", 'critical', 3000
+      elsif output =~ /pending/
+        notify "Pending", "#{output}", "#{images}/ruby_yellow.png", 'normal'
+      else
+        notify "Passed", "#{output}", "#{images}/ruby_green.png",'normal'
+      end
+    rescue Exception => e
+      p "#{e.message} \n #{e.backtrace}"
+    end
+  end
+
+  Autotest.add_hook :ran_command do |autotest|
+    begin
+      results = autotest.results
+      if results.last
+          output = results.last.gsub(/\e\[(\d+)m/,'')
+      else
+          output = 'no message'
+      end
+      images = "~/.autotest_images/"
+      if output =~ /[1-9]\d*\sfailures?/ or (output =~ /examples/) == nil
+        notify "Failure", "#{output}", "#{images}/ruby_red.png", 'critical', 3000
+      elsif output =~ /[1-9]\d*\spending?/
+        notify "Pending", "#{output}", "#{images}/ruby_yellow.png", 'normal'
+      else
+        notify "Passed", "#{output}", "#{images}/ruby_green.png",'normal'
+      end
+    rescue Exception => e
+      p "#{e.message} \n #{e.backtrace}"
+    end
+  end
+end
+
